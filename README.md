@@ -187,7 +187,7 @@ ___
 </div>
 <br/>
 
-<p align="center"> http://4f566df1fed52c6e7fd5f661f64ae3eb.balena-devices.com:8080/d/vJhQNCZgz/sensores-jsn-sr04t-arroyo-de-san-miguel?from=now-24h&orgId=1&to=now&refresh=1m </p>
+<p align="center"> http://4f566df1fed52c6e7fd5f661f64ae3eb.balena-devices.com:8080/d/CAr8WNggk/heltec-cubecell-bme280?orgId=1&refresh=30s </p>
 
 ___
 
