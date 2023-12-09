@@ -25,7 +25,6 @@ ___
 - [Lista de conexiones](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#-lista-de-conexiones-leftwards_arrow_with_hook-)
 - [Flujograma (¡Simplificado!)](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#-flujograma-simplificado-leftwards_arrow_with_hook-)
 - [Archivos de código](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#archivos-de-c%C3%B3digo-leftwards_arrow_with_hook)
-- [Librerías](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#librer%C3%ADas-leftwards_arrow_with_hook)
 - [Experimento de despliegue](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#-experimento-de-despliegue-leftwards_arrow_with_hook-)
 - [Licencia](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#-licencia-leftwards_arrow_with_hook-)
 - [Contacto](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#-contacto-leftwards_arrow_with_hook-)
@@ -53,7 +52,7 @@ ___
 
 ### <p align="justify"> Características principales [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#%C3%ADndice) </p>
 
-- <p align="justify"> Desarrollado usando la HelTec CubeCell HTCC AB01 (Una placa de muy bajo consumo con LoRa implementado y que soporta recarga con panel solar y gestión de batería) </p>
+- <p align="justify"> Desarrollado usando la HelTec CubeCell HTCC-AB01 (Una placa de muy bajo consumo con LoRa implementado y que soporta recarga con panel solar y gestión de batería) </p>
 
   <div align="center">
     <img src="https://alexcorvis.cc/content/images/2020/10/cubecell_htcc-ab01_pinout.png" width="600"  style="margin: 10px;"/>
@@ -97,11 +96,10 @@ ___
 
 | Componente | Modelo |
 | ------------- | ------------- |
-| Placa  | [LilyGO LoRa32 OLED v2.1_1.6](https://www.tinytronics.nl/shop/en/development-boards/microcontroller-boards/with-lora/lilygo-ttgo-t3-lora32-868mhz-v1.6.1-esp32) |
-| Sensor de distancia  | [JSN-SR04T](https://www.tinytronics.nl/shop/en/sensors/distance/waterproof-ultrasonic-sensor-jsn-sr04t) |
-| Batería  | [18650](https://www.tinytronics.nl/shop/en/power/batteries/18650/eve-18650-li-ion-battery-3100mah-10a-inr18650-33v) |
-| Panel solar  | [SYP-S0606](https://www.tinytronics.nl/shop/en/power/solar-energy/solar-panels/solar-panel-with-dc-dc-converter-and-usb-5v-1a) |
-| PCB  | [A medida (archivo incluido)](https://github.com/medialablpwan/lorawaterlevelmonitoring/tree/main/pcb) |
+| Placa  | [CubeCell HTCC-AB01](https://es.aliexpress.com/item/1005005164213870.html?spm=a2g0o.productlist.main.5.15a56dbeZ61KNC&algo_pvid=e097d9ae-f862-4bfa-968b-de8f8e1df81d&algo_exp_id=e097d9ae-f862-4bfa-968b-de8f8e1df81d-2&pdp_npi=4%40dis%21EUR%2118.31%2116.66%21%21%2119.30%21%21%40211b600d17021349784998863e33dc%2112000031936098658%21sea%21ES%210%21AB&curPageLogUid=9XVYaSeuxzMV) |
+| Sensor atmosférico  | [BME280](https://www.tinytronics.nl/shop/en/sensors/distance/waterproof-ultrasonic-sensor-jsn-sr04t) |
+| Sensor de partículas volátiles  | [CCS811](https://www.tinytronics.nl/shop/en/power/batteries/18650/eve-18650-li-ion-battery-3100mah-10a-inr18650-33v) |
+| Batería | [LiPo 1S 3700mAh](https://www.tinytronics.nl/shop/en/power/solar-energy/solar-panels/solar-panel-with-dc-dc-converter-and-usb-5v-1a) |
 | Carcasa  | [A medida (archivo inlcuido)](https://github.com/medialablpwan/lorawaterlevelmonitoring/tree/main/carc) |
 
 </div>
@@ -112,14 +110,13 @@ ___
 
 <div align="center">
 
-| JSN-SR04T | 18650 | SYP-S0606 | LilyGO |
+| BME280 | CCS811 | LiPo | CubeCell |
 | ------------- | ------------- | ------------- | ------------- |
-| `trigger` | - | - | `13` |
-| `echo` | - | - | `12` |
-| `5v` | - | - | `00` |
-| `GND` | - | - | `GND` |
-| - | `Con Bat` | - | `Con Bat` |
-| - | - | `USB` | `USB` |
+| `SDA` | `SDA` | - | `SDA` |
+| `SCL` | `SCL` | - | `SCL` |
+| `Vin` | `Vin` | - | `Vext` |
+| `GND` | `GND` | - | `GND` |
+| - | - | `Con Bat` | `Con Bat` |
 
 </div>
 
@@ -130,9 +127,6 @@ ___
 </div>
 <br/>
 
-> [!TIP]
-> La PCB ofrece la posibilidad de conectar un botón entre GPIO23 y GND para ser programado como se desee
-
 ___
 
 ### <p align="justify"> Flujograma (¡Simplificado!) [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#%C3%ADndice) </p>
@@ -140,7 +134,7 @@ ___
 ```mermaid
 graph TD;
   A[Encender] -->|1| B(Despertarse si se está en deep sleep)
-  B -->|2| C(Obtener la medida de la distancia y batería)
+  B -->|2| C(Obtener las medidas de la batería y de los sensores BME y CCS)
   C -->|3| D(Mandar los bytes a TTN)
   D -->|4| E(Temporizar la tasa de transmisión de datos)
   E -->|5| F(Ir a deep sleep)
@@ -155,50 +149,19 @@ ___
 
 En esta sección, se da una descripción breve a cómo está distribuido el código entre los archivos en [`medialablpwan/lorawaterlevelmonitoring/main/`](https://github.com/medialablpwan/lorawaterlevelmonitoring/tree/main/main), donde el código está disponible para flashear o editar:
 
-- [`main.ino`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/main.ino)
+- [`main.cpp`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/main.ino)
   ```C
   /*
-  Definición de funciones globales
-  Variables a ser almacenadas en la memoria RTC
-  Funciones 'setup()' y 'loop()'
+  Algoritmo completo
   */
   ```
-- [`sensor.ino`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/sensor.ino)
+- [`ttnvalues.h`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/sensor.ino)
   ```C
   /*
-  Funciones y variables necesarias para hacer funcionar el sensor
+  Claves OTAA para sincronizarse en TTN
   */
   ```
-- [`ddc.ino`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/ddc.ino)
-  ```C
-  /*
-  Funciones y variables para la implementación de la tasa dinámica de transferencia de datos
-  */
-- [`sleep.ino`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/sleep.ino)
-  ```C
-  /*
-  Funciones para activar el modo deep sleep de la ESP32
-  */
-- [`ttn.ino`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/ttn.ino)
-  ```C
-  /*
-  Funciones de la librería LMIC
-  */
-- [`configuration.h`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/configuration.h)
-  ```C
-  /*
-  Macros de los sensores y opciones ON/OFF
-  */
-- [`credentials.h`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/credentials.h)
-  ```C
-  /*
-  Claves OTAA para la sincronización en TTN
-  */
-- [`lmic_project_config.h`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/lmic_project_config.h)
-  ```C
-  /*
-  Banda de frecuencia LoRa y selector del chip de radio
-  */
+
 Un análisis más en profundidad viene dado en el propio código ya que cada función está explicada con comentarios.
 
 </div>
@@ -208,25 +171,6 @@ Un análisis más en profundidad viene dado en el propio código ya que cada fun
 
 > [!CAUTION]
 > Se necesita código adicional para implementar I/O por I2C. Las funciones para hacerlo funcionar están en el proyecto original en [`TTGO-PAXCOUNTER-LoRa32-V2.1-TTN/main/main.ino`](https://github.com/rwanrooy/TTGO-PAXCOUNTER-LoRa32-V2.1-TTN/blob/master/main/main.ino)
-
-___
-
-<div align="justify">
-
-### Librerías [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#%C3%ADndice)
-
-- Librería de placas de LilyGO (Copiar el link en la tab de `Preferences` y escoger `TTGO LoRa32 OLED` como `Board` en Arduino IDE): https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/boards/t3_s3_v1_x.json
-
-- LMIC (Copia los contenidos del archivo del proyecto `main/lmic_project_config.h` al archivo de la librería `arduino-lmic/project_config/lmic_project_config.h` y desmarca la banda de frecuencia correspondiente a tu región. ¡El sketch siempre busca la configuración de región en la carpeta de la librería!): https://github.com/mcci-catena/arduino-lmic
-
-- QuickMedianLib (Para obtener medidas de distancia más sólidas): https://github.com/luisllamasbinaburo/Arduino-QuickMedian
-
-- ESP sleep (Para reducir el consumo de la batería): https://github.com/pycom/pycom-esp-idf/blob/master/components/esp32/include/esp_sleep.h
-
-</div>
-
-> [!NOTE]
-> Otras librerías, como la librería SPI, son descargables de forma fácil desde Arduino IDE
 
 ___
 
@@ -273,6 +217,6 @@ ___
 > 
 > Más información sobre nuestras actividades: [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/groups/9298597/)](https://www.linkedin.com/groups/9298597/)
 
-_<p align="justify"> Autores: Daniel Rodríguez Moya, Óscar Gijón, Ramón Rubio y el grupo de trabajo de MediaLab\_ LPWAN :shipit: </p>_
+_<p align="justify"> Autores: Daniel Rodríguez Moya, Iván Graña y el grupo de trabajo de MediaLab\_ LPWAN :shipit: </p>_
 
 [^1]: Instrucciones sobre como desplegar paneles de Grafana en el siguiente repo [`medialablpwan/documentacion`](https://github.com/medialablpwan/documentacion).
