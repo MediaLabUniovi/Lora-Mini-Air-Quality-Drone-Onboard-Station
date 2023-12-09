@@ -95,10 +95,10 @@ ___
 | Componente | Modelo |
 | ------------- | ------------- |
 | Placa  | [CubeCell HTCC-AB01](https://es.aliexpress.com/item/1005005164213870.html?spm=a2g0o.productlist.main.5.15a56dbeZ61KNC&algo_pvid=e097d9ae-f862-4bfa-968b-de8f8e1df81d&algo_exp_id=e097d9ae-f862-4bfa-968b-de8f8e1df81d-2&pdp_npi=4%40dis%21EUR%2118.31%2116.66%21%21%2119.30%21%21%40211b600d17021349784998863e33dc%2112000031936098658%21sea%21ES%210%21AB&curPageLogUid=9XVYaSeuxzMV) |
-| Sensor atmosférico  | [BME280](https://www.tinytronics.nl/shop/en/sensors/distance/waterproof-ultrasonic-sensor-jsn-sr04t) |
-| Sensor de partículas volátiles  | [CCS811](https://www.tinytronics.nl/shop/en/power/batteries/18650/eve-18650-li-ion-battery-3100mah-10a-inr18650-33v) |
-| Batería | [LiPo 1S 3700mAh](https://www.tinytronics.nl/shop/en/power/solar-energy/solar-panels/solar-panel-with-dc-dc-converter-and-usb-5v-1a) |
-| Carcasa  | [A medida (archivo inlcuido)](https://github.com/medialablpwan/lorawaterlevelmonitoring/tree/main/carc) |
+| Sensor atmosférico  | [BME280](https://www.amazon.es/AZDelivery-GY-BME280-Sensor-Parent/dp/B082KL18WW) |
+| Sensor de partículas volátiles  | [CCS811](https://www.amazon.es/detecci%C3%B3n-di%C3%B3xido-carbono-Detecci%C3%B3n-CJMCU-811/dp/B0CM34TX8W/ref=sr_1_2?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=SBGE3X7XFR6Z&keywords=ccs811&qid=1702138660&s=industrial&sprefix=ccs81%2Cindustrial%2C96&sr=1-2) |
+| Batería | [LiPo 1S 300mAh](https://www.amazon.es/EEMB-Bater%C3%ADa-pol%C3%ADmero-Recargable-Conector/dp/B09DPPP8ZV/ref=sr_1_20?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=21VQ5BJQGTSSQ&keywords=bater%C3%ADa+lipo+3.7v&qid=1702138720&sprefix=bateria+lipo+3.7v%2Caps%2C89&sr=8-20) |
+| Carcasa  | [A medida (archivo inlcuido)](https://github.com/medialablpwan/droneloraminiairqualitystation/tree/main/carc) |
 
 </div>
 
@@ -146,7 +146,7 @@ ___
 
 ### Archivos de código [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#%C3%ADndice)
 
-En esta sección, se da una descripción breve a cómo está distribuido el código entre los archivos en [`medialablpwan/lorawaterlevelmonitoring/main/`](https://github.com/medialablpwan/lorawaterlevelmonitoring/tree/main/main), donde el código está disponible para flashear o editar:
+En esta sección, se da una descripción breve a cómo está distribuido el código entre los archivos en [`medialablpwan/droneloraminiairqualitystation/main/src/`](https://github.com/medialablpwan/droneloraminiairqualitystation/tree/main/src), donde el código está disponible para flashear o editar:
 
 - [`main.cpp`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/main.ino)
   ```C
