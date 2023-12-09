@@ -67,53 +67,27 @@ ___
   </div>
   <br/>
 
-> [!WARNING]
-> Este sensor es extremádamente sensible a perturbaciones físicas. Estate seguro de alinearlo perfectamente de forma perpendicular con la superficie donde rebote el haz y de tener visión directa a ella
-
 <div align="justify">
 
-- Tasa dinámica de transmisión de datos: el intervalo de envío cambia automáticamente su valor entre 20 y 40 minutos en función de la desviación típica de las últimas 5 medidas enviadas a TTN. (Por OTAA, [`payload_formatter.json`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/payload_formatter.json) es una sugerencia de cómo decodificar los bytes enviados)
+- <p align="justify"> Carcasa a medida para encapsular todos los componentes a un tamaño similar al de la batería del drone (Envase + Recipiente) </p>
 
   <div align="center">
-    <img src="https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/pics/Screenshot%202023-11-30%20182339.png" width="600"  style="margin: 10px;"/>
-  </div>
-  <br/>
-
-</div>
-
-- <p align="justify"> PCB a medida </p>
-
-  <div align="center">
-    <img src="https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/pics/Screenshot%202023-10-04%20142016.png" width="600"  style="margin: 10px;"/>
-  </div>
-  <br/>
-
-> [!TIP]
-> Considera soldar conectores hembra para pines para que los componentes se puedan conectar y desconectar de forma simple en caso de tener que hacer una reparación
-
-- <p align="justify"> Carcasa a medida para encajar todos los componentes de la forma más eficiente (Recipiente + Soporte del panel solar + Protector del conector USB) </p>
-
-  <div align="center">
-    <img src="https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/pics/Screenshot%202023-12-01%20175741.png" width="600"  style="margin: 10px;"/>
+    <img src="https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/pics/Screenshot%202023-12-09%20150934.png" width="600"  style="margin: 10px;"/>
   </div>
   <br/>
   <div align="center">
-    <img src="https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/pics/Screenshot%202023-12-01%20175633.png" width="600"  style="margin: 10px;"/>
-  </div>
-  <br/>
-  <div align="center">
-    <img src="https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/pics/Screenshot%202023-12-04%20113305.png" width="600"  style="margin: 10px;"/>
+    <img src="https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/pics/Screenshot%202023-12-09%20151020.png" width="600"  style="margin: 10px;"/>
   </div>
   <br/>
 
   > Ejemplo de ensamblaje:
   <div align="center">
-    <img src="https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/pics/5_Carcasa%20%2B%20Electr%C3%B3nica%20montada.jpg" width="600"  style="margin: 10px;"/>
+    <img src="https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/pics/photo_5974565629660871395_y.jpg" width="600"  style="margin: 10px;"/>
   </div>
   <br/>
 
 > [!WARNING]
-> Es muy recomendable emplear filamento de impresión 3D de PETG de color claro para sobrevivir a la radiación solar y a las deformaciones plásticas. Una tórica es una buena opción para fijar y estabilizar el sensor dentro de la campana. Hacen falta cuatro tornillos M3 para fijar el ensamblado
+> Hacen falta seis tornillos M3 para fijar el ensamblado y dos bridas para ajustarlo al frame del drone
 
 ___
 
