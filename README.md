@@ -114,6 +114,7 @@ ___
 | `SCL` | `SCL` | - | `SCL` |
 | `Vin` | `Vin` | - | `Vext` |
 | `GND` | `GND` | - | `GND` |
+| `GND` | `WAK` | - | `GND` |
 | - | - | `Con Bat` | `Con Bat` |
 
 </div>
