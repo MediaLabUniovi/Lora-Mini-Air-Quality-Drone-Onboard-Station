@@ -132,7 +132,7 @@ ___
 
 ```mermaid
 graph TD;
-  A[Encender] -->|1| B(Despertarse si se está en deep sleep)
+  A[Encender] -->|1| B(Conectarse a una red LoRaWAN)
   B -->|2| C(Obtener las medidas de la batería y de los sensores BME y CCS)
   C -->|3| D(Mandar los bytes a TTN)
   D -->|4| E(Temporizar la tasa de transmisión de datos)
