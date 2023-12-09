@@ -137,7 +137,7 @@ graph TD;
   C -->|3| D(Mandar los bytes a TTN)
   D -->|4| E(Temporizar la tasa de transmisión de datos)
   E -->|5| F(Ir a deep sleep)
-  F -->|6| B
+  F -->|6| C
 ```
 
 ___
