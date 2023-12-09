@@ -66,8 +66,6 @@ ___
   </div>
   <br/>
 
-<div align="justify">
-
 - <p align="justify"> Carcasa a medida para encapsular todos los componentes a un tamaño similar al de la batería del drone (Envase + Recipiente) </p>
 
   <div align="center">
@@ -123,7 +121,7 @@ ___
 > En una protoboard se ve de la siguienta forma:
 
 <div align="center">
-  <img src="https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/pics/photo_6026280471878549038_y.jpg" width="600"  style="margin: 10px;"/>
+  <img src="https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/pics/droneloraminiairqualitystation_schematic.png" width="600"  style="margin: 10px;"/>
 </div>
 <br/>
 
