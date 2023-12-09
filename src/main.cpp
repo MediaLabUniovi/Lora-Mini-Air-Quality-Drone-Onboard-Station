@@ -19,13 +19,12 @@ bool isTxConfirmed = LORAWAN_UPLINKMODE;                                    // T
 uint8_t appPort = 2;
 uint8_t confirmedNbTrials = 4;                                              // Trials of TX
 
-// BME280 variables -----------------------------------------------------------------------------------------
-int temperature, humidity, batteryVoltage;
+// Sensors variables -----------------------------------------------------------------------------------------
+int temperature, humidity, co2, tvoc, batteryVoltage;
 long pressure;
 
+// Sensors constructs
 BME280 bme280;
-
-// CCS811 variables -----------------------------------------------------------------------------------------
 Adafruit_CCS811 ccs;
 
 // Function to prepare the transmission =====================================================================
@@ -42,15 +41,6 @@ static void prepareTxFrame(uint8_t port){
     }
   }
 
-  delay(500);                                                               // This delay is required to allow the sensor time to init
-  
-  // Initialization of the variables to the BME library functions -------------------------------------------
-  temperature = bme280.getTemperature() * 100;                              // As temperature is give with two decimals, it is converted to 'int'
-  humidity = bme280.getHumidity();
-  pressure = bme280.getPressure();
-  
-  Wire.end();
-
   // If CCS does not begin, print an error if serial enabled ------------------------------------------------
   if(!ccs.begin()){
     if(ENABLE_DEBUG){
@@ -60,13 +50,26 @@ static void prepareTxFrame(uint8_t port){
   }
 
   while(!ccs.available());                                                  // Wait for the sensor to be ready
+
+  delay(500);                                                               // This delay is required to allow the sensor time to init
+  
+  // Initialization of the variables to the BME library functions -------------------------------------------
+  temperature = bme280.getTemperature() * 100;                              // As temperature is give with two decimals, it is converted to 'int'
+  humidity = bme280.getHumidity();
+  pressure = bme280.getPressure();
+
+  // Initialization of the variables to the CCS library functions -------------------------------------------
+  co2 = ccs.geteCO2();
+  tvoc = ccs.getTVOC();                                                     // TVOC: Total Volatile Organic Compounds
+
+  Wire.end();
   
   digitalWrite(Vext, HIGH);                                                 // Turn the power to the sensor off again
   
   batteryVoltage = getBatteryVoltage();                                     // CubeCell built-in function to get battery voltage
 
   // TX bytes array initialization --------------------------------------------------------------------------
-  appDataSize = 10;
+  appDataSize = 14;
   appData[0] = lowByte(temperature);                                        // As temperature values range from bigger than 256 (more than a byte) and less than 65536 (less than 2 bytes), functions 'lowByte' and 'highByte' are needed
   appData[1] = highByte(temperature);
 
@@ -81,11 +84,11 @@ static void prepareTxFrame(uint8_t port){
   appData[8] = lowByte(batteryVoltage);
   appData[9] = highByte(batteryVoltage);
 
-  appData[10] = lowByte(ccs.geteCO2());
-  appData[11] = highByte(ccs.geteCO2());
+  appData[10] = lowByte(co2);
+  appData[11] = highByte(co2);
 
-  appData[12] = lowByte(ccs.getTVOC());
-  appData[13] = highByte(ccs.getTVOC());
+  appData[12] = lowByte(tvoc);
+  appData[13] = highByte(tvoc);
 
   // Serial monitor messages to debug -----------------------------------------------------------------------
   if(ENABLE_DEBUG){
