@@ -42,7 +42,7 @@ Como parte de mi Trabajo de Fin de Grado sobre drones y sensorización, en Media
 </div>
 
 <div align="center">
-  <img src="https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/pics/photo_5976817429474556872_y.jpg" width="600"  style="margin: 10px;"/>
+  <img src="https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/pics/photo_5974565629660871396_y.jpg" width="600"  style="margin: 10px;"/>
 </div>
 <br/>
 
@@ -123,7 +123,7 @@ ___
 > En una protoboard se ve de la siguienta forma:
 
 <div align="center">
-  <img src="https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/pics/1_ensayo.jpg" width="600"  style="margin: 10px;"/>
+  <img src="https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/pics/photo_6026280471878549038_y.jpg" width="600"  style="margin: 10px;"/>
 </div>
 <br/>
 
@@ -178,14 +178,10 @@ ___
 
 ## <p align="justify"> Experimento de despliegue [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#%C3%ADndice) </p>
 
-### <p align="justify"> La primera unidad se ha desplegado cerca de la Escuela Politécnica de Ingeniería de Gijón: </p>
+### <p align="justify"> El ensamblaje final ha quedado de la siguiente manera: </p>
 
 <div align="center">
-  <img src="https://github.com/medialablpwan/waterlevelcontrol/blob/main/pics/9_Sensor%20Cooper%20en%20Arroyo%20de%20San%20Miguel.jpg" width="600"  style="margin: 10px;"/>
-</div>
-<br/>
-<div align="center">
-  <img src="https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/pics/map.png" width="600"  style="margin: 10px;"/>
+  <img src="https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/pics/photo_5976817429474556872_y.jpg" width="600"  style="margin: 10px;"/>
 </div>
 <br/>
 
