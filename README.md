@@ -183,7 +183,7 @@ ___
 ### Accede al panel de Grafana[^1] por medio de este código QR o el link de debajo:
 
 <div align="center">
-  <img src="https://github.com/medialablpwan/waterlevelcontrol/blob/main/pics/qrcode_4f566df1fed52c6e7fd5f661f64ae3eb.balena-devices.com.png" width="600"  style="margin: 10px;"/>
+  <img src="https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/pics/qrcode_4f566df1fed52c6e7fd5f661f64ae3eb.balena-devices.com.png" width="600"  style="margin: 10px;"/>
 </div>
 <br/>
 
