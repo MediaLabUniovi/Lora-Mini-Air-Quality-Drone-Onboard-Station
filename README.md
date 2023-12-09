@@ -63,7 +63,7 @@ ___
 - <p align="justify"> Cambios realizados para añadirle, además, un sensor CCS811 (Sensor de partículas volátiles) </p>
 
   <div align="center">
-    <img src="https://github.com/medialablpwan/waterlevelcontrol/blob/main/pics/61rPJNXbuNL._AC_UF894%2C1000_QL80_.jpg" width="600"  style="margin: 10px;"/>
+    <img src="https://www.az-delivery.de/cdn/shop/products/kohlendioxid-gassensor-metalloxid-ccs811-sensor-mit-hochempfindlichem-on-board-detektionssensormodul-fur-die-luftqualitat-432838.jpg?v=1679398782&width=1200" width="600"  style="margin: 10px;"/>
   </div>
   <br/>
 
