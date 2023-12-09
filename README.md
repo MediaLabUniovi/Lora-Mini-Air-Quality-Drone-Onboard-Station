@@ -148,13 +148,13 @@ ___
 
 En esta sección, se da una descripción breve a cómo está distribuido el código entre los archivos en [`medialablpwan/droneloraminiairqualitystation/main/src/`](https://github.com/medialablpwan/droneloraminiairqualitystation/tree/main/src), donde el código está disponible para flashear o editar:
 
-- [`main.cpp`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/main.ino)
+- [`main.cpp`](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/src/main.cpp)
   ```C
   /*
   Algoritmo completo
   */
   ```
-- [`ttnvalues.h`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/sensor.ino)
+- [`ttnvalues.h`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/ttnvalues.h)
   ```C
   /*
   Claves OTAA para sincronizarse en TTN
@@ -199,7 +199,7 @@ Este proyecto está licenciado bajo la [GPL-3.0 license](https://github.com/medi
 
 ___
 
-### <p align="justify"> Contacto [:leftwards_arrow_with_hook:]https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#%C3%ADndice) </p>
+### <p align="justify"> Contacto [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#%C3%ADndice) </p>
 
 > [!IMPORTANT]
 > Responderemos amablemente a dudas y leeremos sugerencias: [![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=for-the-badge&logo=Gmail&logoColor=white&link=mailto:medialablpwan@gmail.com)](mailto:medialablpwan@gmail.com)
