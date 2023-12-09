@@ -19,15 +19,15 @@ ___
 <div align="justify">
 
 ## Índice
-- [Introducción](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#introducci%C3%B3n-leftwards_arrow_with_hook)
-- [Funciones principales](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#-caracter%C3%ADsticas-principales-leftwards_arrow_with_hook-)
-- [Lista de componentes](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#-lista-de-componentes-leftwards_arrow_with_hook-)
-- [Lista de conexiones](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#-lista-de-conexiones-leftwards_arrow_with_hook-)
-- [Flujograma (¡Simplificado!)](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#-flujograma-simplificado-leftwards_arrow_with_hook-)
-- [Archivos de código](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#archivos-de-c%C3%B3digo-leftwards_arrow_with_hook)
-- [Experimento de despliegue](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#-experimento-de-despliegue-leftwards_arrow_with_hook-)
-- [Licencia](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#-licencia-leftwards_arrow_with_hook-)
-- [Contacto](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#-contacto-leftwards_arrow_with_hook-)
+- [Introducción](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#introducci%C3%B3n-leftwards_arrow_with_hook)
+- [Características principales](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-caracter%C3%ADsticas-principales-leftwards_arrow_with_hook-)
+- [Lista de componentes](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-lista-de-componentes-leftwards_arrow_with_hook-)
+- [Lista de conexiones](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-lista-de-conexiones-leftwards_arrow_with_hook-)
+- [Flujograma (¡Simplificado!)](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-flujograma-simplificado-leftwards_arrow_with_hook-)
+- [Archivos de código](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#archivos-de-c%C3%B3digo-leftwards_arrow_with_hook)
+- [Experimento de implementación](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-experimento-de-implementaci%C3%B3n-leftwards_arrow_with_hook-)
+- [Licencia](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-licencia-leftwards_arrow_with_hook-)
+- [Contacto](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-contacto-leftwards_arrow_with_hook-)
 
 </div>
 
@@ -35,7 +35,7 @@ ___
 
 <div align="justify">
 
-## Introducción [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#%C3%ADndice)
+## Introducción [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#%C3%ADndice)
 
 Como parte de mi Trabajo de Fin de Grado sobre drones y sensorización, en Medialab_ LPWAN, se me dio a conocer la tecnología de LoRaWAN. Con ella, entendí rápidamente el potencial de trabajar en un sensor de calidad de aire que montar en un drone de _long range_ para ser usado como plataforma móvil y medir a kilómetros de distancia atmósferas hostiles en caso de accidente donde fuese peligroso enviar a un equipo de personas. Como resultado, nació el sensor _on-board_ que os voy a mostrar como un nodo conectado por LoRa, sincronizable con [The Things Network](https://www.thethingsnetwork.org/), que montarle al drone que construí sin que la cobertura fuese un factor limitante.
 
@@ -50,7 +50,7 @@ Como parte de mi Trabajo de Fin de Grado sobre drones y sensorización, en Media
 
 ___
 
-### <p align="justify"> Características principales [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#%C3%ADndice) </p>
+### <p align="justify"> Características principales [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#%C3%ADndice) </p>
 
 - <p align="justify"> Desarrollado usando la HelTec CubeCell HTCC-AB01 (Una placa de muy bajo consumo con LoRa implementado y que soporta recarga con panel solar y gestión de batería) </p>
 
@@ -88,7 +88,7 @@ ___
 
 ___
 
-### <p align="justify"> Lista de componentes [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#%C3%ADndice) </p>
+### <p align="justify"> Lista de componentes [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#%C3%ADndice) </p>
 
 <div align="center">
 
@@ -104,7 +104,7 @@ ___
 
 ___
 
-### <p align="justify"> Lista de conexiones [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#%C3%ADndice) </p>
+### <p align="justify"> Lista de conexiones [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#%C3%ADndice) </p>
 
 <div align="center">
 
@@ -128,7 +128,7 @@ ___
 
 ___
 
-### <p align="justify"> Flujograma (¡Simplificado!) [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#%C3%ADndice) </p>
+### <p align="justify"> Flujograma (¡Simplificado!) [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#%C3%ADndice) </p>
 
 ```mermaid
 graph TD;
@@ -144,7 +144,7 @@ ___
 
 <div align="justify">
 
-### Archivos de código [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#%C3%ADndice)
+### Archivos de código [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#%C3%ADndice)
 
 En esta sección, se da una descripción breve a cómo está distribuido el código entre los archivos en [`medialablpwan/lorawaterlevelmonitoring/main/`](https://github.com/medialablpwan/lorawaterlevelmonitoring/tree/main/main), donde el código está disponible para flashear o editar:
 
@@ -169,7 +169,7 @@ ___
 
 ___
 
-## <p align="justify"> Experimento de implementación [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#%C3%ADndice) </p>
+## <p align="justify"> Experimento de implementación [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#%C3%ADndice) </p>
 
 ### <p align="justify"> El ensamblaje final ha quedado de la siguiente manera: </p>
 
@@ -193,13 +193,13 @@ ___
 
 ___
 
-## <p align="justify"> Licencia [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#%C3%ADndice) </p>
+## <p align="justify"> Licencia [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#%C3%ADndice) </p>
 
-Este proyecto está licenciado bajo la [GPL-3.0 license](https://github.com/rwanrooy/TTGO-PAXCOUNTER-LoRa32-V2.1-TTN/blob/master/LICENSE). Contiene código de [alexcorvis84/mini-lora-weatherstation](https://github.com/alexcorvis84/mini-lora-weatherstation)
+Este proyecto está licenciado bajo la [GPL-3.0 license](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/LICENSE). Contiene código de [alexcorvis84/mini-lora-weatherstation](https://github.com/alexcorvis84/mini-lora-weatherstation)
 
 ___
 
-### <p align="justify"> Contacto [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/README_ES.md#%C3%ADndice) </p>
+### <p align="justify"> Contacto [:leftwards_arrow_with_hook:]https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#%C3%ADndice) </p>
 
 > [!IMPORTANT]
 > Responderemos amablemente a dudas y leeremos sugerencias: [![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=for-the-badge&logo=Gmail&logoColor=white&link=mailto:medialablpwan@gmail.com)](mailto:medialablpwan@gmail.com)
