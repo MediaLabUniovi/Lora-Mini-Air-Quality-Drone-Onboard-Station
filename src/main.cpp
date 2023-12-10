@@ -105,9 +105,9 @@ static void prepareTxFrame(uint8_t port){
     if(ccs.available()){
       if(!ccs.readData()){
         Serial.print("CO2: ");
-        Serial.print(ccs.geteCO2());
+        Serial.print(co2);
         Serial.print("ppm, TVOC: ");
-        Serial.println(ccs.getTVOC());
+        Serial.println(tvoc);
       }
       else{
         Serial.println("ERROR!");
