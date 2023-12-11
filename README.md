@@ -27,6 +27,7 @@ ___
 - [Lista de conexiones](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-lista-de-conexiones-leftwards_arrow_with_hook-)
 - [Flujograma (¡Simplificado!)](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-flujograma-simplificado-leftwards_arrow_with_hook-)
 - [Archivos de código](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#archivos-de-c%C3%B3digo-leftwards_arrow_with_hook)
+- [Ejemplos consultados]()
 - [Experimento de implementación](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-experimento-de-implementaci%C3%B3n-leftwards_arrow_with_hook-)
 - [Licencia](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-licencia-leftwards_arrow_with_hook-)
 - [Contacto](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-contacto-leftwards_arrow_with_hook-)
@@ -164,6 +165,30 @@ En esta sección, se da una descripción breve a cómo está distribuido el cód
   ```
 
 Un análisis más en profundidad viene dado en el propio código ya que cada función está explicada con comentarios.
+
+</div>
+
+___
+
+<div align="justify">
+
+### Ejemplos consultados [:leftwards_arrow_with_hook:](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#%C3%ADndice)
+
+En esta sección se listan los ejemplos de código oficiales de HelTec usados para adaptar el proyecto original a los objetivos de éste y si han sido finalmente útiles:
+
+- [ ] [LoRaWAN _¡Hola, Mundo!_](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/LoRa/examples/LoRaWAN/LoRaWan/LoRaWan.ino)
+
+- [ ] [LoRaWAN CCS811](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/LoRa/examples/LoRaWAN/LoRaWAN_Sensors/LoRaWan_CCS811/LoRaWan_CCS811.ino)
+
+- [ ] [LoRaWAN multisensor](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/LoRa/examples/LoRaWAN/LoRaWAN_Sensors/LoRaWan_MultiSensor/include/prepareTxFrame.cpp)
+
+- [ ] [LoRaWAN BMP280](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/LoRa/examples/LoRaWAN/LoRaWAN_Sensors_ThirdParty/examples/LoRaWAN_BMP280/LoRaWAN_BMP280.ino)
+
+- [ ] [CCS811 Test (CCS811.h)](https://github.com/HelTecAutomation/CubeCell-Arduino/tree/master/libraries/SensorBasic/examples/CCS811/CCS811_test)
+
+- [ ] [CCS Example (Adafruit_CCS811.h)](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/Sensor_ThirdParty/examples/CCS811/CCS811_test/CCS811_test.ino)
+
+- [ ] [BME280 Example](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/Sensor_ThirdParty/examples/BME280/bme280_example/bme280_example.ino)
 
 </div>
 
