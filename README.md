@@ -1,4 +1,4 @@
-[![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#experimental)
+[![stability-alpha](https://img.shields.io/badge/stability-alpha-f4d03f.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#alpha)
 
 <div align="right">
 
@@ -27,7 +27,7 @@ ___
 - [Lista de conexiones](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-lista-de-conexiones-leftwards_arrow_with_hook-)
 - [Flujograma (¡Simplificado!)](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-flujograma-simplificado-leftwards_arrow_with_hook-)
 - [Archivos de código](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#archivos-de-c%C3%B3digo-leftwards_arrow_with_hook)
-- [Ejemplos consultados]()
+- [Ejemplos consultados](https://github.com/medialablpwan/loraminiairqualitydroneonboardstation/blob/main/README.md#ejemplos-consultados-leftwards_arrow_with_hook)
 - [Experimento de implementación](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-experimento-de-implementaci%C3%B3n-leftwards_arrow_with_hook-)
 - [Licencia](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-licencia-leftwards_arrow_with_hook-)
 - [Contacto](https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/README.md#-contacto-leftwards_arrow_with_hook-)
