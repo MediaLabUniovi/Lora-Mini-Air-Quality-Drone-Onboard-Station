@@ -184,7 +184,7 @@ En esta sección se listan los ejemplos de código oficiales de HelTec usados pa
 
 - [ ] [LoRaWAN BMP280](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/LoRa/examples/LoRaWAN/LoRaWAN_Sensors_ThirdParty/examples/LoRaWAN_BMP280/LoRaWAN_BMP280.ino)
 
-- [ ] [CCS811 Test (CCS811.h)](https://github.com/HelTecAutomation/CubeCell-Arduino/tree/master/libraries/SensorBasic/examples/CCS811/CCS811_test)
+- [ ] [CCS811 Test (CCS811.h)](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/SensorBasic/examples/CCS811/CCS811_test/CCS811_test.ino)
 
 - [ ] [CCS Example (Adafruit_CCS811.h)](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/Sensor_ThirdParty/examples/CCS811/CCS811_test/CCS811_test.ino)
 
