@@ -1,4 +1,4 @@
-[![stability-alpha](https://img.shields.io/badge/stability-alpha-f4d03f.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#alpha)
+[![stability-beta](https://img.shields.io/badge/stability-beta-33bbff.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#beta)
 
 <div align="right">
 
@@ -140,7 +140,7 @@ graph TD;
   C -->|3| D(Mandar los bytes a TTN)
   D -->|4| E(Temporizar la tasa de transmisión de datos)
   E -->|5| F(Ir a deep sleep)
-  F -->|6| C
+  F -->|6| B
 ```
 
 ___
@@ -176,11 +176,11 @@ ___
 
 En esta sección se listan los ejemplos de código oficiales de HelTec usados para adaptar el proyecto original a los objetivos de éste y si han sido finalmente útiles:
 
-- [ ] [LoRaWAN _¡Hola, Mundo!_](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/LoRa/examples/LoRaWAN/LoRaWan/LoRaWan.ino)
+- [x] [LoRaWAN _¡Hola, Mundo!_](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/LoRa/examples/LoRaWAN/LoRaWan/LoRaWan.ino)
 
 - [ ] [LoRaWAN CCS811](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/LoRa/examples/LoRaWAN/LoRaWAN_Sensors/LoRaWan_CCS811/LoRaWan_CCS811.ino)
 
-- [ ] [LoRaWAN multisensor](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/LoRa/examples/LoRaWAN/LoRaWAN_Sensors/LoRaWan_MultiSensor/include/prepareTxFrame.cpp)
+- [x] [LoRaWAN multisensor](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/LoRa/examples/LoRaWAN/LoRaWAN_Sensors/LoRaWan_MultiSensor/include/prepareTxFrame.cpp)
 
 - [ ] [LoRaWAN BMP280](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/LoRa/examples/LoRaWAN/LoRaWAN_Sensors_ThirdParty/examples/LoRaWAN_BMP280/LoRaWAN_BMP280.ino)
 
@@ -188,7 +188,7 @@ En esta sección se listan los ejemplos de código oficiales de HelTec usados pa
 
 - [ ] [CCS Example (Adafruit_CCS811.h)](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/Sensor_ThirdParty/examples/CCS811/CCS811_test/CCS811_test.ino)
 
-- [ ] [BME280 Example](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/Sensor_ThirdParty/examples/BME280/bme280_example/bme280_example.ino)
+- [x] [BME280 Example](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/Sensor_ThirdParty/examples/BME280/bme280_example/bme280_example.ino)
 
 </div>
 
