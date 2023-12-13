@@ -210,11 +210,11 @@ ___
 ### Accede al panel de Grafana[^1] por medio de este código QR o el link de debajo:
 
 <div align="center">
-  <img src="https://github.com/medialablpwan/droneloraminiairqualitystation/blob/main/pics/qrcode_4f566df1fed52c6e7fd5f661f64ae3eb.balena-devices.com.png" width="600"  style="margin: 10px;"/>
+  <img src="https://github.com/medialablpwan/loraminiairqualitydroneonboardstation/blob/main/pics/qrcode_4f566df1fed52c6e7fd5f661f64ae3eb.balena-devices.com%20(1).png" width="600"  style="margin: 10px;"/>
 </div>
 <br/>
 
-<p align="center"> http://4f566df1fed52c6e7fd5f661f64ae3eb.balena-devices.com:8080/d/CAr8WNggk/heltec-cubecell-bme280?orgId=1&refresh=30s </p>
+<p align="center"> http://4f566df1fed52c6e7fd5f661f64ae3eb.balena-devices.com:8080/d/1bwgnfzgk/heltec-cubecell-bme280-ccs811?orgId=1&from=now-30m&to=now&refresh=30s </p>
 
 ___
 
