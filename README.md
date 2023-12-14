@@ -117,8 +117,9 @@ ___
 | ------------- | ------------- | ------------- | ------------- |
 | `SDA` | `SDA` | - | `SDA` |
 | `SCL` | `SCL` | - | `SCL` |
-| `Vin` | `Vin` | - | `Vext` |
+| `VIN` | - | - | `VEXT` |
 | `GND` | `GND` | - | `GND` |
+| - | `VCC` | - | `VDD` |
 | - | `WAK` | - | `GPIO0` |
 | - | - | `Con Bat` | `Con Bat` |
 
@@ -130,6 +131,9 @@ ___
   <img src="https://github.com/medialablpwan/loraminiairqualitydroneonboardstation/blob/main/pics/droneloraminiairqualitystation_schematic.png" width="600"  style="margin: 10px;"/>
 </div>
 <br/>
+
+> [!NOTE]
+> Teniendo en cuenta que el programa hace uso del deep sleep de la CubeCell, el sensor BME280 se pone en sleep entre mensajes gracias a que el pin `VEXT` se puede gobernar (_HIGH/LOW_), mientras que el CCS811, por su uso de agentes químicos para obtener las medidas, se conecta al pin `VDD` _estático_ (incluso en deep sleep aporta corriente), y es el pin `GPIO0`,conectado al pin `WAK` del sensor, el que emite una señal digital (_HIGH/LOW_) el que lo echa a sleep
 
 ___
 
@@ -159,7 +163,7 @@ En esta sección, se da una descripción breve a cómo está distribuido el cód
   Algoritmo completo
   */
   ```
-- [`ttnvalues.h`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/ttnvalues.h)
+- [`credentials.h`](https://github.com/medialablpwan/lorawaterlevelmonitoring/blob/main/main/credentials.h)
   ```C
   /*
   Claves OTAA para sincronizarse en TTN
@@ -186,7 +190,7 @@ En esta sección se listan los ejemplos de código oficiales de HelTec usados pa
 
 - [ ] [LoRaWAN BMP280](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/LoRa/examples/LoRaWAN/LoRaWAN_Sensors_ThirdParty/examples/LoRaWAN_BMP280/LoRaWAN_BMP280.ino)
 
-- [ ] [CCS811 Test (CCS811.h)](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/SensorBasic/examples/CCS811/CCS811_test/CCS811_test.ino)
+- [x] [CCS811 Test (CCS811.h)](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/SensorBasic/examples/CCS811/CCS811_test/CCS811_test.ino)
 
 - [ ] [CCS Example (Adafruit_CCS811.h)](https://github.com/HelTecAutomation/CubeCell-Arduino/blob/master/libraries/Sensor_ThirdParty/examples/CCS811/CCS811_test/CCS811_test.ino)
 
