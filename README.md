@@ -126,7 +126,7 @@ ___
 > En una protoboard se ve de la siguienta forma:
 
 <div align="center">
-  <img src="https://github.com/medialablpwan/loraminiairqualitydroneonboardstation/blob/main/pics/droneloraminiairqualitystation_schematic.png" width="600"  style="margin: 10px;"/>
+  <img src="https://github.com/medialablpwan/loraminiairqualitydroneonboardstation/blob/main/pics/droneloraminiairqualitystation_schematic_fix.png" width="600"  style="margin: 10px;"/>
 </div>
 <br/>
 
