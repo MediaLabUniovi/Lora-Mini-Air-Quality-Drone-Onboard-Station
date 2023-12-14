@@ -1,12 +1,10 @@
-![Static Badge](https://img.shields.io/badge/version-v1.0-green) ![Static Badge](https://img.shields.io/badge/first_mature_release!-8A2BE2)
-
-
-
 <div align="right">
 
 [![spanish](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/es.png)](./README.md) | [![english](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/gb.png)](./README_EN.md)
 
 </div>
+
+![Static Badge](https://img.shields.io/badge/version-v1.1-3314333)
 
 <div align="center">
 
