@@ -1,4 +1,5 @@
-[![stability-release-candidate](https://img.shields.io/badge/stability-pre--release-48c9b0.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#release-candidate)
+![Static Badge](https://img.shields.io/badge/version-v1.0-green)
+
 
 <div align="right">
 
