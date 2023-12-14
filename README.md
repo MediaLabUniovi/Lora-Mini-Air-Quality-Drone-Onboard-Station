@@ -1,4 +1,5 @@
-![Static Badge](https://img.shields.io/badge/version-v1.0-green)
+![Static Badge](https://img.shields.io/badge/version-v1.0-green) ![Static Badge](https://img.shields.io/badge/first_mature_release!-8A2BE2)
+
 
 
 <div align="right">
