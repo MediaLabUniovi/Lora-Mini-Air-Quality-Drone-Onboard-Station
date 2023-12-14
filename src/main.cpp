@@ -1,5 +1,5 @@
 /* ***********************************************************************************************************
-SENSOR ALI - MEDIALAB LPWAN UNIVERSIDAD DE OVIEDO
+SENSOR ALI V1.1 - MEDIALAB LPWAN UNIVERSIDAD DE OVIEDO
 
 Este archivo ha sido modificado de manera considerable para implementar el sensor de CO2 y particulas
 volatiles, además del original BME280. El enlace para consultar el proyecto original del usuario de GitHub
@@ -34,7 +34,7 @@ uint8_t confirmedNbTrials = 4;                                              // T
 
 // Sensors variables -----------------------------------------------------------------------------------------
 int temperature, pressure_int, pressure_dec, batteryVoltage;
-uint8_t humidity, batteryLevel, level;
+uint8_t humidity, volt2level, batteryLevel;
 long pressure_pa;
 float pressure_atm;
 uint16_t co2_i, tvoc_i, co2_medio, tvoc_medio;
@@ -94,8 +94,8 @@ void pressure_parts(){
 // Function to get battery level from the built-in battery voltage function ---------------------------------
 uint8_t getLiPolevel(){
   batteryVoltage = getBatteryVoltage();
-  level = (0.009 * batteryVoltage - 3.3);
-  return level;
+  volt2level = (batteryVoltage - 3300) / 9;                                 // Lineal equation that converts mV (4200 - 3300) to a % (0 - 100)
+  return volt2level;
 }
 
 // Function to prepare the transmission =====================================================================
