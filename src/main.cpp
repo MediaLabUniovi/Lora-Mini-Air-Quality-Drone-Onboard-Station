@@ -109,7 +109,7 @@ static void prepareTxFrame(uint8_t port){
 	digitalWrite(GPIO4, HIGH);
   delay(500);
 
-  Serial.println("BME280 and CCS811 CubeCell test ALPHA");
+  Serial.println("Sensor Ali v1.1 test");
 
   Wire.begin();
   delay(100);
