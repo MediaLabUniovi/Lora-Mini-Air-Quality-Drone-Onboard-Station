@@ -4,7 +4,7 @@
 
 </div>
 
-![Static Badge](https://img.shields.io/badge/version-v1.1-3314333)
+![Static Badge](https://img.shields.io/badge/version-v1.2-3314333)
 
 <div align="center">
 
