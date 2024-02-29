@@ -139,7 +139,7 @@ graph TD;
   B -->|2| C(Get battery, BME and CCS sensors measurements)
   C -->|3| D(Send measurement bytes to TTN)
   D -->|4| E(Temporize data transmission rate)
-  E -->|5| F(Go to deep sleep)
+  E -->|5| F(Go to deep sleep for the temporized time)
   F -->|6| B
 ```
 
