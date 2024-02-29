@@ -1,5 +1,5 @@
 /* ***********************************************************************************************************
-SENSOR ALI V1.1 - MEDIALAB LPWAN UNIVERSIDAD DE OVIEDO
+SENSOR ALI V1.2 - MEDIALAB LPWAN UNIVERSIDAD DE OVIEDO
 
 Este archivo ha sido modificado de manera considerable para implementar el sensor de CO2 y particulas
 volatiles, además del original BME280. El enlace para consultar el proyecto original del usuario de GitHub
@@ -15,117 +15,77 @@ volatiles, además del original BME280. El enlace para consultar el proyecto ori
 #include "credentials.h"                                                    // OTAA keys to synchronize with TTN
 
 // 'defines' for various aims --------------------------------------------------------------------------------
-#define ENABLE_DEBUG 0                                                      // Toggle to enable/disable serial monitor
-#define PA2ATM 101300                                                       // Conversion factor from Pa to atm (pressure)
-#define CCS8_I 5                                                            // Amount of iterations to make an average for the CCS811 sensor values
+#define ENABLE_DEBUG 1                                                      // Toggle to enable/disable serial monitor
                                                 
-uint32_t appTxDutyCycle = 90000;                                            // Data transmission rate time (in milliseconds). Cannot be declared and initialized in other ways as it refers to a library variable
-
 // LoRaWAN technic declarations -----------------------------------------------------------------------------
+uint32_t appTxDutyCycle = 90000;                                            // Data transmission rate time (in milliseconds). Cannot be declared and initialized in other ways as it refers to a library variable
 uint16_t userChannelsMask[6]={ 0x00FF,0x0000,0x0000,0x0000,0x0000,0x0000 };
 LoRaMacRegion_t loraWanRegion = ACTIVE_REGION;                              // Macro that represents the region, EU868
 DeviceClass_t  loraWanClass = LORAWAN_CLASS;                                // Macro that represents the device class, A
 bool overTheAirActivation = LORAWAN_NETMODE;                                // Macro that represents the type of LoRa activation, OTAA
-bool loraWanAdr = LORAWAN_ADR;                                              // LoRa adress
+bool loraWanAdr = LORAWAN_ADR;                                              // LoRa address
 bool keepNet = LORAWAN_NET_RESERVE;
 bool isTxConfirmed = LORAWAN_UPLINKMODE;                                    // TX needs to be confirmed
 uint8_t appPort = 2;
 uint8_t confirmedNbTrials = 4;                                              // Trials of TX
 
 // Sensors variables -----------------------------------------------------------------------------------------
-int temperature, pressure_int, pressure_dec, batteryVoltage;
-uint8_t humidity, volt2level, batteryLevel;
-long pressure_pa;
-float pressure_atm;
-uint16_t co2_i, tvoc_i, co2_medio, tvoc_medio;
+int temperature, batteryVoltage;
+uint8_t humidity;
+long pressure;
+uint16_t co2_medida, tvoc_medida;
 
 // Sensors constructors -------------------------------------------------------------------------------------
-BME280 bme280;
+BME280 bme;
 CCS811 ccs;
 
 // Function to get the average measurement of CO2 and TVOC out of 5 individual measurements -----------------
-void ccs_medio(){
-  co2_medio = 0;
-  co2_i = 0;
-  tvoc_medio = 0;
-  tvoc_i = 0;
-  for(int i = 0; i < CCS8_I; i++){
-    if(!ccs.readData()){                                                    // 'ccs.readData()' is kinda tricky. It returns a true if no measurements are available, and false if it successfully found something to show. That is why it partnered with a not (!)
-      co2_i = ccs.geteCO2();                                                // Both 'ccs.getCO2()' and 'ccs.getTVOC()' return the values
-      co2_medio += co2_i;
-      tvoc_i = ccs.getTVOC();                                               // TVOC: Total Volatile Organic Compounds
-      tvoc_medio =+ tvoc_i;
-      Serial.print("El CO2 en la iteracion es: ");
-      Serial.println(co2_i);
-      Serial.print("El TVOC en la iteracion es: ");
-      Serial.println(tvoc_i);
-    }
-    else{
-      Serial.println("ERROR!");
-    }
-    delay(1000);
+void ccs_medida(){
+  co2_medida = 0;
+  tvoc_medida = 0;
+  if(!ccs.readData()){                                                      // 'ccs.readData()' is kinda tricky. It returns a true if no measurements are available, and false if it successfully found something to show. That is why it partnered with a not (!)
+    co2_medida = ccs.geteCO2();                                             // Both 'ccs.getCO2()' and 'ccs.getTVOC()' return the values
+    tvoc_medida = ccs.getTVOC();                                            // TVOC: Total Volatile Organic Compounds
+    Serial.print("El CO2 es: ");
+    Serial.println(co2_medida);
+    Serial.print("El TVOC es: ");
+    Serial.println(tvoc_medida);
   }
-  co2_medio /= CCS8_I;
-  Serial.print("El CO2 medio es: ");
-  Serial.println(co2_medio);
-  tvoc_medio /= CCS8_I;
-  Serial.print("El TVOC medio es: ");
-  Serial.println(tvoc_medio);
-}
-
-// Function to divide pressure into integer and decimal parts -----------------------------------------------
-void pressure_parts(){
-  float dec;
-  Serial.print("La presion en Pa ");
-  Serial.print(pressure_pa);
-  pressure_atm = pressure_pa / PA2ATM;                                      // Pressure in atm (too many decimals)
-  Serial.print("La presion en atm es: ");
-  Serial.println(pressure_atm);
-  pressure_int = floor(pressure_atm);                                       // Integer part of atms
-  Serial.print("Parte entera de la presion en atm: ");
-  Serial.println(pressure_int);
-  dec = pressure_atm - pressure_int;                                        // Decimal part of atms
-  dec *= 1000;                                                              // Number of decimals I want
-  pressure_dec = dec;                                                       // Decimals I want as an int and without residual decimal numbers
-  Serial.print("Parte decimal de la presion en atm: ");
-  Serial.println(pressure_dec);
-}
-
-// Function to get battery level from the built-in battery voltage function ---------------------------------
-uint8_t getLiPolevel(){
-  batteryVoltage = getBatteryVoltage();
-  volt2level = (batteryVoltage - 3300) / 9;                                 // Lineal equation that converts mV (4200 - 3300) to a % (0 - 100)
-  return volt2level;
+  else{
+    Serial.println("ERROR!");
+  }
 }
 
 // Function to prepare the transmission =====================================================================
 static void prepareTxFrame(uint8_t port){
-  // This enables the output to power the sensor ------------------------------------------------------------
-  pinMode(Vext, OUTPUT);                                                    // Vext is a reserved word to refer to the 3.3V pin of the CubeCell board
+  pinMode(Vext, OUTPUT);                                                    // Vext is a reserved word to refer to the 3.3V pin of the CubeCell board, it enables the output to power the sensor
   digitalWrite(Vext, LOW);                                                  // SET IT TO LOW MEANS ENABLING 3.3V, IT WORKS "INVERSELY"
-	pinMode(GPIO0, OUTPUT);                                                   // GPIO0 is used to control the 'WAK' pin of the CCS, enabling and disabling sleep mode of the sensor
+	
+  pinMode(GPIO0, OUTPUT);                                                   // GPIO0 is used to control the 'WAK' pin of the CCS, enabling and disabling sleep mode of the sensor
 	digitalWrite(GPIO0, LOW);                                                 // It is set to LOW when reading as "GND" makes it be awake. Kinda contra-intuitive, I know
-	pinMode(GPIO4, OUTPUT);                                                   // RGB LED GPIO
+	
+  pinMode(GPIO4, OUTPUT);                                                   // RGB LED GPIO
 	digitalWrite(GPIO4, HIGH);
-  delay(500);
 
-  Serial.println("Sensor Ali v1.1 test");
+  delay(500);                                                               // Small courtesy delay for pin modes
 
-  Wire.begin();
-  delay(100);
+  Serial.println("Sensor Ali v1.2 test");
+
+  Wire.begin();                                                             // Initialization of I2C communication
+
+  delay(100);                                                               // Small courtesy delay for I2C communication
 
   // If BME does not init, print error if serial enabled ----------------------------------------------------
-  if(!bme280.init()){
+  if(!bme.init()){
     Serial.println("Could not find a valid BME280 sensor, check wiring!");
   }
 
   delay(500);                                                               // This delay is required to allow the sensor time to init
 
   // Initialization of the variables to the BME library functions -------------------------------------------
-  temperature = bme280.getTemperature() * 100;                              // As temperature is give with two decimals, it is converted to 'int'
-  humidity = bme280.getHumidity();
-  pressure_pa = bme280.getPressure();                                       // Pressure in Pa (long)
-  pressure_parts();
+  temperature = bme.getTemperature() * 100;                                 // As temperature is give with two decimals, it is converted to 'int'
+  humidity = bme.getHumidity();
+  pressure = bme.getPressure();                                             // Pressure in Pa
 
   delay(100);                                                               // Delay between sensors
 
@@ -135,40 +95,43 @@ static void prepareTxFrame(uint8_t port){
     while(1);
   }
 
+  delay(500);                                                               // This delay is required to allow the sensor time to init
+
   while(!ccs.available());                                                  // Wait for the sensor to be ready
 
   delay(5000);                                                              // This delay is required to allow the sensor time to be available
 
-  ccs_medio();
+  ccs_medida();
 
-  Wire.end();
+  Wire.end();                                                               // End of I2C communication
   
   // Turn the power to the sensor off again ----------------------------------------------------------------
   digitalWrite(Vext, HIGH);                                                 // SET IT TO HIGH, DISABLING 3.3V OUTPUT, REMEMBER IS CONTRA-INTUITIVE
-	digitalWrite(GPIO0,HIGH);                                                 // CCS 'WAK' pin control to HIGH as this enables the sleep mode
-	digitalWrite(GPIO4,LOW);
+	digitalWrite(GPIO0, HIGH);                                                // CCS 'WAK' pin control to HIGH as this enables the sleep mode
+	digitalWrite(GPIO4, LOW);
 
-  //batteryLevel = (BoardGetBatteryLevel() / 254) * 100;                      // CubeCell built-in function to get battery level
-  batteryLevel = getLiPolevel();                                            // Self-made function to get battery level as the one above does not work properly
+  batteryVoltage = getBatteryVoltage();                                     // Built-in function to get battery voltage
 
   // TX bytes array initialization --------------------------------------------------------------------------
-  appDataSize = 11;
+  appDataSize = 13;
   appData[0] = lowByte(temperature);                                        // As temperature values range from bigger than 256 (more than a byte) and less than 65536 (less than 2 bytes), functions 'lowByte' and 'highByte' are needed
   appData[1] = highByte(temperature);
 
   appData[2] = lowByte(humidity);
 
-  appData[3] = lowByte(pressure_int);
-  appData[4] = lowByte(pressure_dec);
-  appData[5] = highByte(pressure_dec);
+  appData[3] = (byte) ((pressure & 0xFF000000) >> 24 );
+  appData[4] = (byte) ((pressure & 0x00FF0000) >> 16 );
+  appData[5] = (byte) ((pressure & 0x0000FF00) >> 8  );
+  appData[6] = (byte) ((pressure & 0X000000FF)       );
 
-  appData[6] = lowByte(batteryLevel);
+  appData[7] = highByte(batteryVoltage);
+  appData[8] = lowByte(batteryVoltage);
 
-  appData[7] = lowByte(co2_medio);
-  appData[8] = highByte(co2_medio);
+  appData[9] = lowByte(co2_medida);
+  appData[10] = highByte(co2_medida);
 
-  appData[9] = lowByte(tvoc_medio);
-  appData[10] = highByte(tvoc_medio);
+  appData[11] = lowByte(tvoc_medida);
+  appData[12] = highByte(tvoc_medida);
 
   // Serial monitor messages to debug -----------------------------------------------------------------------
   Serial.print("Temperature: ");
@@ -176,15 +139,15 @@ static void prepareTxFrame(uint8_t port){
   Serial.print("C, Humidity: ");
   Serial.print(humidity);
   Serial.print("%, Pressure: ");
-  Serial.print(pressure_atm);
-  Serial.print(" atm, Battery Voltage: ");
-  Serial.print(batteryLevel);
-  Serial.println(" %");
+  Serial.print(pressure);
+  Serial.print(" hPa, Battery Voltage: ");
+  Serial.print(batteryVoltage);
+  Serial.println(" V");
 
   Serial.print("CO2: ");
-  Serial.print(co2_medio);
+  Serial.print(co2_medida);
   Serial.print("ppm, TVOC: ");
-  Serial.println(tvoc_medio);
+  Serial.println(tvoc_medida);
 }
 
 // 'setup()' function =======================================================================================
